@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Featured Installer Agreement — ampinstall.com</title>
+<meta name="description" content="Agree to terms and checkout for Featured Installer listing.">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+.a-wrap{max-width:580px;margin:40px auto;padding:0 20px}
+.a-card{background:var(--bg-card);border:1px solid var(--border-card);border-radius:var(--radius-lg);padding:32px}
+.a-card h1{font-size:1.5rem;margin:0 0 6px}
+.a-card .sub{color:var(--text-secondary);font-size:.9rem;margin-bottom:20px}
+.a-price{text-align:center;padding:20px;background:var(--gradient-green-glow);border:1px solid rgba(0,220,130,.15);border-radius:var(--radius);margin-bottom:20px}
+.a-price .amt{font-size:2.2rem;font-weight:900;color:var(--green-400)}
+.a-price .lbl{font-size:.85rem;color:var(--text-secondary)}
+.a-check{display:flex;gap:10px;align-items:flex-start;margin:16px 0;font-size:.88rem;color:var(--text-secondary)}
+.a-check input{margin-top:3px;accent-color:var(--green-400);width:18px;height:18px;cursor:pointer}
+.a-check label{cursor:pointer;line-height:1.5}
+.a-btn{display:block;width:100%;padding:16px;text-align:center;background:var(--gradient-cta);color:#080c14;border:none;border-radius:var(--radius-xl);font-size:1.05rem;font-weight:800;cursor:pointer;text-decoration:none;transition:all .25s;margin-top:8px}
+.a-btn:hover{background:var(--gradient-cta-hover);transform:scale(1.01)}
+.a-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.a-note{text-align:center;font-size:.8rem;color:var(--text-muted);margin-top:10px}
+.a-terms{font-size:.85rem;color:var(--text-muted);margin-top:20px;padding-top:20px;border-top:1px solid var(--border-subtle);line-height:1.6}
+.a-terms a{color:var(--green-400)}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">⚡ EV <span>Charger Installer</span> Near Me</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="mobileNav">
+      <a href="/states/">States</a>
+      <a href="/claim">Claim</a>
+      <a href="/blog/">Blog</a>
+      <a href="/featured">Featured</a>
+    </nav>
+  </div>
+</header>
+
+<div class="a-wrap">
+<div class="a-card">
+  <h1>Featured Installer</h1>
+  <p class="sub" id="tierLabel">Priority placement in your city — one-time payment</p>
+
+  <div class="a-price">
+    <div class="amt" id="priceDisplay">$47</div>
+    <div class="lbl" id="tierDesc">One-time • No subscription • 30-day refund</div>
+  </div>
+
+  <div class="a-check">
+    <input type="checkbox" id="agreeCheck">
+    <label for="agreeCheck">I agree to the <a href="/terms-featured" target="_blank">Featured Installer Agreement</a> and understand what's included: priority placement, featured badge, website link, lead alerts. I understand this is a one-time fee with a 30-day money-back guarantee.</label>
+  </div>
+
+  <button class="a-btn" id="payBtn" disabled>Agree & Pay $47 →</button>
+  <div class="a-note">🔒 Secure checkout via Stripe</div>
+
+  <div class="a-terms">
+    <strong>What you get:</strong> Priority placement in your city • Featured Installer badge • Live website link • Lead alerts when customers inquire • 30-day money-back guarantee.
+    <br><br>
+    Full terms at <a href="/terms-featured" target="_blank">ampinstall.com/terms-featured</a>
+  </div>
+</div>
+</div>
+
+<script>
+const STRIPE_LINKS = {
+  'city': 'https://buy.stripe.com/9B614n113etx9JT01H0Ba00',
+  'state': ''  // Ryan will add the $470 link here
+};
+
+const TIERS = {
+  'city': { price: '$47', label: 'Priority placement in your city', desc: 'One-time • No subscription • 30-day refund' },
+  'state': { price: '$470', label: 'Priority placement across your state', desc: 'One-time • Featured in every city page • 30-day refund' }
+};
+
+function getTier() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get('tier') || 'city';
+}
+
+function init() {
+  const tier = getTier();
+  const info = TIERS[tier] || TIERS['city'];
+  document.getElementById('priceDisplay').textContent = info.price;
+  document.getElementById('tierLabel').textContent = info.label;
+  document.getElementById('tierDesc').textContent = info.desc;
+  document.getElementById('payBtn').textContent = `Agree & Pay ${info.price} →`;
+}
+
+document.getElementById('agreeCheck').addEventListener('change', function() {
+  document.getElementById('payBtn').disabled = !this.checked;
+});
+
+document.getElementById('payBtn').addEventListener('click', function() {
+  if (this.disabled) return;
+  const tier = getTier();
+  const url = STRIPE_LINKS[tier];
+  if (url) {
+    window.open(url, '_blank');
+  } else {
+    alert('Payment link coming soon. Email hello@ampinstall.com to complete your upgrade.');
+  }
+});
+
+init();
+</script>
+<script src="/js/analytics.js" defer></script></body>
+</html>

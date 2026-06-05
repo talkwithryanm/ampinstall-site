@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Featured Installer Badge — AmpInstall</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/favicon.png" type="image/png">
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;max-width:680px;margin:0 auto;padding:20px;background:#fafafa;color:#1a1a1a;line-height:1.6}
+h1{border-bottom:2px solid #00dc82;padding-bottom:6px}
+pre{background:#0a0f1e;color:#e4e4e4;padding:16px;border-radius:8px;overflow:auto;font-size:13px}
+.badge-preview{display:flex;gap:8px;align-items:center;margin:20px 0}
+.btn{background:#00dc82;color:#0a0f1e;border:none;padding:10px 20px;border-radius:6px;cursor:pointer;font-weight:bold}
+.copied{color:#00dc82;display:none;margin-left:8px}
+</style></head>
+<body>
+<h1>⚡ AmpInstall Verified Badge</h1>
+<p>Add this badge to your website to show customers you're a verified EV charger installer on AmpInstall.com. Customers searching &quot;EV charger installer near me&quot; find your profile through our directory.</p>
+
+<h2>Preview</h2>
+<div class="badge-preview">
+<style>
+.ampinstall-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:#0a0f1e;color:#fff;border-radius:6px;font-family:-apple-system,sans-serif;font-size:13px;text-decoration:none;border:1px solid #00dc82}
+.ampinstall-badge:hover{opacity:0.9}
+.ampinstall-badge .bolt{color:#00dc82;font-size:16px}
+.ampinstall-badge .check{color:#00dc82}
+</style>
+<a href="https://ampinstall.com/claim/" class="ampinstall-badge" target="_blank" rel="noopener">
+  <span class="bolt">⚡</span>
+  <span>Verified on <strong>AmpInstall</strong></span>
+  <span class="check">✓</span>
+</a>
+</div>
+
+<h2>How to Add</h2>
+<p>Replace <code>YOUR-SLUG</code> with your listing slug (e.g., <code>mister-sparky</code>). Then paste before <code>&lt;/body&gt;</code> on your website.</p>
+
+<pre id="codeBlock">&lt;!-- Verified on AmpInstall --&gt;
+&lt;style&gt;
+.ampinstall-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:#0a0f1e;color:#fff;border-radius:6px;font-family:-apple-system,sans-serif;font-size:13px;text-decoration:none;border:1px solid #00dc82}
+.ampinstall-badge:hover{opacity:0.9}
+.ampinstall-badge .bolt{color:#00dc82;font-size:16px}
+&lt;/style&gt;
+&lt;a href="https://ampinstall.com/claim/YOUR-SLUG" class="ampinstall-badge" target="_blank" rel="noopener"&gt;
+  &lt;span class="bolt"&gt;⚡&lt;/span&gt;
+  &lt;span&gt;Verified on &lt;strong&gt;AmpInstall&lt;/strong&gt;&lt;/span&gt;
+  &lt;span class="check"&gt;✓&lt;/span&gt;
+&lt;/a&gt;</pre>
+
+<button class="btn" onclick="copyCode()">📋 Copy Code</button>
+<span id="copiedMsg" class="copied">✓ Copied!</span>
+
+<p style="margin-top:40px;color:#666;font-size:0.9em"><a href="/">← Back to AmpInstall</a></p>
+
+<script>
+function copyCode(){
+  navigator.clipboard.writeText(document.getElementById('codeBlock').textContent);
+  document.getElementById('copiedMsg').style.display='inline';
+  setTimeout(function(){document.getElementById('copiedMsg').style.display='none'},2000);
+}
+</script>
+</body></html>

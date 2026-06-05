@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="sgalaska" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="58" fill="url(#sgalaska)" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.3"/>
+  <polygon points="92.5,73.3 71.5,99.2 38.7,86.8 24.1,51.0 56.7,29.8 86.3,43.9" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.4"/>
+  <polygon points="83.0,72.9 55.1,83.0 45.0,55.1 72.9,45.0" fill="none" stroke="#3b82f6" stroke-width="0.5" stroke-opacity="0.25"/>
+  <text x="64" y="72" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="32" font-weight="800" fill="#3b82f6">AK</text>
+</svg>

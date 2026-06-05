@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="sgohio" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="58" fill="url(#sgohio)" stroke="#8b5cf6" stroke-width="1.5" stroke-opacity="0.3"/>
+  <polygon points="104.8,74.2 76.4,107.3 41.1,87.7 33.0,56.3 55.2,33.2 91.8,35.2" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="0.8" stroke-opacity="0.4"/>
+  <polygon points="90.7,83.4 44.6,90.7 37.3,44.6 83.4,37.3" fill="none" stroke="#8b5cf6" stroke-width="0.5" stroke-opacity="0.25"/>
+  <text x="64" y="72" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="32" font-weight="800" fill="#8b5cf6">OH</text>
+</svg>

@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Free ZIP Search Widget — Embed on Your Site</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="/favicon.png" type="image/png">
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;max-width:680px;margin:0 auto;padding:20px;background:#fafafa;color:#111;line-height:1.6}
+h1{border-bottom:2px solid #00dc82;padding-bottom:6px}
+pre{background:#0a0f1e;color:#e4e4e4;padding:16px;border-radius:8px;overflow:auto;font-size:13px;line-height:1.5}
+.btn{background:#00dc82;color:#0a0f1e;border:none;padding:10px 20px;border-radius:6px;cursor:pointer;font-weight:bold;margin-top:8px}
+.copied{color:#00dc82;display:none;margin-left:8px}
+.widget-preview{max-width:400px;margin:20px 0}
+</style></head>
+<body>
+<h1>⚡ Free EV Charger Installer Search Widget</h1>
+<p>Add this widget to your site and let your visitors search for EV charger installers by ZIP code. It's free, takes 30 seconds, and helps your readers find qualified local pros.</p>
+
+<h2>Live Preview</h2>
+<div class="widget-preview">
+<style>
+.amp-zip-widget{background:#0a0f1e;color:#fff;padding:24px;border-radius:12px;font-family:-apple-system,sans-serif;max-width:400px}
+.amp-zip-widget h3{margin:0 0 8px;font-size:18px;color:#00dc82}
+.amp-zip-widget p{margin:0 0 16px;font-size:13px;color:#999}
+.amp-zip-widget .row{display:flex;gap:8px}
+.amp-zip-widget input{flex:1;padding:10px 14px;border:1px solid #333;border-radius:8px;background:#1a1a2e;color:#fff;font-size:15px}
+.amp-zip-widget input:focus{outline:2px solid #00dc82;border-color:#00dc82}
+.amp-zip-widget button{padding:10px 20px;background:#00dc82;color:#0a0f1e;border:none;border-radius:8px;font-weight:700;cursor:pointer;white-space:nowrap}
+.amp-zip-widget button:hover{opacity:0.9}
+.amp-zip-widget .footer{font-size:11px;color:#555;margin-top:12px;text-align:center}
+.amp-zip-widget .footer a{color:#00dc82;text-decoration:none}
+</style>
+<div class="amp-zip-widget">
+  <h3>⚡ Find EV Charger Installers</h3>
+  <p>Enter your ZIP code for local installer quotes</p>
+  <div class="row">
+    <input type="text" class="amp-zip-input" placeholder="ZIP Code" maxlength="5" inputmode="numeric" pattern="[0-9]*">
+    <button class="amp-zip-btn">Search</button>
+  </div>
+  <div class="footer">Powered by <a href="https://ampinstall.com">AmpInstall</a></div>
+</div>
+<script>
+(function(){
+  var btn = document.querySelector('.amp-zip-btn');
+  var inp = document.querySelector('.amp-zip-input');
+  if(btn && inp){
+    btn.addEventListener('click', function(){
+      var z = inp.value.trim();
+      if(/^\d{5}$/.test(z)) window.open('https://ampinstall.com/tools/zip-search?zip='+z, '_blank');
+      else alert('Please enter a valid 5-digit ZIP code');
+    });
+    inp.addEventListener('keydown', function(e){
+      if(e.key === 'Enter') btn.click();
+    });
+  }
+})();
+</script>
+</div>
+
+<h2>How to Embed</h2>
+<p>Copy and paste this code anywhere on your website (before &lt;/body&gt; works best).</p>
+
+<pre id="embedCode">&lt;style&gt;
+.amp-zip-widget{background:#0a0f1e;color:#fff;padding:24px;border-radius:12px;font-family:-apple-system,sans-serif;max-width:400px}
+.amp-zip-widget h3{margin:0 0 8px;font-size:18px;color:#00dc82}
+.amp-zip-widget p{margin:0 0 16px;font-size:13px;color:#999}
+.amp-zip-widget .row{display:flex;gap:8px}
+.amp-zip-widget input{flex:1;padding:10px 14px;border:1px solid #333;border-radius:8px;background:#1a1a2e;color:#fff;font-size:15px}
+.amp-zip-widget input:focus{outline:2px solid #00dc82;border-color:#00dc82}
+.amp-zip-widget button{padding:10px 20px;background:#00dc82;color:#0a0f1e;border:none;border-radius:8px;font-weight:700;cursor:pointer;white-space:nowrap}
+.amp-zip-widget button:hover{opacity:0.9}
+.amp-zip-widget .footer{font-size:11px;color:#555;margin-top:12px;text-align:center}
+.amp-zip-widget .footer a{color:#00dc82;text-decoration:none}
+&lt;/style&gt;
+&lt;div class="amp-zip-widget"&gt;
+  &lt;h3&gt;⚡ Find EV Charger Installers&lt;/h3&gt;
+  &lt;p&gt;Enter your ZIP code for local installer quotes&lt;/p&gt;
+  &lt;div class="row"&gt;
+    &lt;input type="text" class="amp-zip-input" placeholder="ZIP Code" maxlength="5" inputmode="numeric" pattern="[0-9]*"&gt;
+    &lt;button class="amp-zip-btn"&gt;Search&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="footer"&gt;Powered by &lt;a href="https://ampinstall.com"&gt;AmpInstall&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function(){
+  document.querySelector('.amp-zip-btn').addEventListener('click', function(){
+    var z = document.querySelector('.amp-zip-input').value.trim();
+    if(/^\d{5}$/.test(z)) window.open('https://ampinstall.com/tools/zip-search?zip='+z, '_blank');
+  });
+})();
+&lt;/script&gt;</pre>
+
+<button class="btn" onclick="copyCode()">📋 Copy Embed Code</button>
+<span id="copiedMsg" class="copied">✓ Copied!</span>
+
+<h2>Why Embed?</h2>
+<ul>
+<li>Your visitors get a useful tool at no cost to you</li>
+<li>You get a link back to your site from ours</li>
+<li>Helps EV owners find qualified local installers</li>
+<li>Perfect for: EV blogs, solar installers, real estate sites, home improvement blogs, local business directories</li>
+</ul>
+
+<p style="margin-top:40px;color:#666;font-size:0.9em"><a href="/">← Back to AmpInstall</a></p>
+
+<script>
+function copyCode(){
+  navigator.clipboard.writeText(document.getElementById('embedCode').textContent);
+  document.getElementById('copiedMsg').style.display='inline';
+  setTimeout(function(){document.getElementById('copiedMsg').style.display='none'},2000);
+}
+</script>
+</body></html>

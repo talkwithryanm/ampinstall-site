@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect x="8" y="4" width="48" height="56" rx="8" fill="#22c55e" fill-opacity="0.1" stroke="#22c55e" stroke-width="1"/>
+  <text x="32" y="28" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="700" fill="#22c55e">EV</text>
+  <circle cx="12" cy="32" r="3" fill="#E82127"/> <circle cx="22" cy="32" r="3" fill="#00A651"/> <circle cx="32" cy="32" r="3" fill="#ED8B00"/> <circle cx="42" cy="32" r="3" fill="#00A3E0"/> <circle cx="52" cy="32" r="3" fill="#333333"/> <circle cx="62" cy="32" r="3" fill="#0055A5"/>
+</svg>

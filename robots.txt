@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://ampinstall.com/sitemap.xml
+Disallow: /*?utm_

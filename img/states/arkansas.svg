@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="sgarkansas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="58" fill="url(#sgarkansas)" stroke="#ef4444" stroke-width="1.5" stroke-opacity="0.3"/>
+  <polygon points="99.0,76.0 70.9,99.3 36.8,87.6 30.0,52.3 57.9,32.6 89.7,41.7" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="0.8" stroke-opacity="0.4"/>
+  <polygon points="84.5,84.5 43.5,84.5 43.5,43.5 84.5,43.5" fill="none" stroke="#ef4444" stroke-width="0.5" stroke-opacity="0.25"/>
+  <text x="64" y="72" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="32" font-weight="800" fill="#ef4444">AR</text>
+</svg>

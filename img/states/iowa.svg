@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="sgiowa" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="58" fill="url(#sgiowa)" stroke="#f97316" stroke-width="1.5" stroke-opacity="0.3"/>
+  <polygon points="103.6,74.6 75.1,105.5 33.6,94.4 24.4,53.4 56.0,34.1 92.3,35.7" fill="#f97316" fill-opacity="0.15" stroke="#f97316" stroke-width="0.8" stroke-opacity="0.4"/>
+  <polygon points="86.1,73.4 54.6,86.1 41.9,54.6 73.4,41.9" fill="none" stroke="#f97316" stroke-width="0.5" stroke-opacity="0.25"/>
+  <text x="64" y="72" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="32" font-weight="800" fill="#f97316">IA</text>
+</svg>

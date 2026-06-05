@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Claim Your Listing — ampinstall.com</title>
+<meta name="description" content="Find and claim your EV charger installer listing on ampinstall.com. Upgrade to featured for $47 one-time.">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+/* ── Claim page specific styles ── */
+.c-hero{text-align:center;padding:80px 20px 40px}
+.c-hero h1{font-size:2.6rem;margin-bottom:10px;background:linear-gradient(135deg,#f0f4f8 0%,#00dc82 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.c-hero .sub{font-size:1.1rem;color:var(--text-secondary);max-width:560px;margin:0 auto;line-height:1.6}
+
+/* Search box */
+.c-search{max-width:680px;margin:30px auto;padding:0 20px}
+.c-search-box{position:relative}
+.c-search-box input{width:100%;padding:18px 20px 18px 52px;border:1px solid var(--border-card);border-radius:var(--radius-xl);background:var(--bg-card);color:var(--text-primary);font-size:1.1rem;outline:none;transition:all .25s;box-sizing:border-box}
+.c-search-box input:focus{border-color:var(--green-400);box-shadow:0 0 0 3px var(--green-glow)}
+.c-search-box input::placeholder{color:var(--text-muted)}
+.c-search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:1.3rem;opacity:.5;pointer-events:none}
+.c-search-hint{text-align:center;color:var(--text-muted);font-size:.85rem;margin-top:10px}
+
+/* Results */
+.c-results{max-width:800px;margin:30px auto;padding:0 20px}
+.c-result{background:var(--bg-card);border:1px solid var(--border-card);border-radius:var(--radius);padding:20px 24px;margin-bottom:12px;transition:all .2s;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.c-result:hover{border-color:var(--border-card-hover);background:var(--bg-card-hover);transform:translateY(-1px)}
+.c-result-info{flex:1;min-width:0}
+.c-result-name{font-size:1.05rem;font-weight:700;color:var(--text-primary);margin-bottom:4px}
+.c-result-meta{font-size:.85rem;color:var(--text-secondary);display:flex;gap:16px;flex-wrap:wrap}
+.c-result-meta span{display:inline-flex;align-items:center;gap:4px}
+.c-result-rating{color:var(--green-400);font-weight:600}
+.c-result-action{flex-shrink:0}
+.c-result-btn{background:var(--green-500);color:#080c14;border:none;padding:10px 22px;border-radius:30px;font-weight:700;font-size:.88rem;cursor:pointer;transition:all .2s;white-space:nowrap}
+.c-result-btn:hover{background:var(--green-400);transform:scale(1.03)}
+.c-result .badge{display:inline-block;background:var(--green-glow);color:var(--green-400);padding:2px 10px;border-radius:12px;font-size:.75rem;font-weight:600}
+
+/* No results */
+.c-empty{text-align:center;padding:60px 20px;color:var(--text-muted);display:none}
+.c-empty .big{font-size:3rem;margin-bottom:12px}
+.c-empty p{font-size:.95rem;line-height:1.6}
+
+/* Claim panel (slide-in) */
+.c-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1000;backdrop-filter:blur(4px)}
+.c-panel{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:90%;max-width:580px;max-height:90vh;overflow-y:auto;background:var(--bg-dark);border:1px solid var(--border-card);border-radius:var(--radius-lg);padding:36px;z-index:1001;display:none;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.c-panel.open,.c-overlay.open{display:block}
+.c-panel-close{position:absolute;top:16px;right:20px;background:none;border:none;color:var(--text-muted);font-size:1.5rem;cursor:pointer;padding:4px 8px;border-radius:6px;transition:color .2s}
+.c-panel-close:hover{color:var(--text-primary)}
+.c-panel h2{font-size:1.4rem;margin:0 0 6px}
+.c-panel .sub{color:var(--text-secondary);font-size:.9rem;margin-bottom:24px;line-height:1.5}
+
+/* Claimed detail */
+.c-detail{background:var(--bg-card);border:1px solid var(--border-card);border-radius:var(--radius);padding:20px;margin-bottom:24px}
+.c-detail-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border-subtle);font-size:.9rem}
+.c-detail-row:last-child{border-bottom:none}
+.c-detail-label{color:var(--text-muted)}
+.c-detail-value{color:var(--text-primary);font-weight:500;text-align:right}
+
+/* Price box */
+.c-price{text-align:center;padding:24px;background:var(--gradient-green-glow);border:1px solid rgba(0,220,130,.15);border-radius:var(--radius);margin-bottom:20px}
+.c-price .amount{font-size:2.5rem;font-weight:900;color:var(--green-400)}
+.c-price .sub{font-size:.85rem;color:var(--text-secondary);margin-top:4px}
+
+.c-form label{display:block;font-size:.88rem;color:var(--text-secondary);margin-bottom:6px;margin-top:16px}
+.c-form label:first-child{margin-top:0}
+.c-form input,.c-form textarea{width:100%;padding:12px 16px;border:1px solid var(--border-card);border-radius:var(--radius);background:var(--bg-input);color:var(--text-primary);font-size:.95rem;outline:none;transition:all .2s;box-sizing:border-box}
+.c-form input:focus,.c-form textarea:focus{border-color:var(--green-400);box-shadow:0 0 0 3px var(--green-glow)}
+.c-form textarea{resize:vertical;min-height:60px;font-family:inherit}
+.c-form .c-btn-stripe{display:block;width:100%;padding:16px;margin-top:20px;background:var(--gradient-cta);color:#080c14;border:none;border-radius:var(--radius-xl);font-size:1.05rem;font-weight:800;cursor:pointer;transition:all .25s;text-decoration:none;text-align:center}
+.c-form .c-btn-stripe:hover{background:var(--gradient-cta-hover);transform:scale(1.01)}
+.c-form .c-btn-stripe:disabled{opacity:.5;cursor:not-allowed}
+.c-form .c-note{text-align:center;font-size:.8rem;color:var(--text-muted);margin-top:10px}
+
+/* Loading */
+.c-loading{text-align:center;padding:40px;color:var(--text-muted);display:none}
+.c-loading .spinner{display:inline-block;width:36px;height:36px;border:3px solid var(--border-subtle);border-top-color:var(--green-400);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.footer-note{text-align:center;padding:40px 20px;color:var(--text-muted);font-size:.82rem;max-width:600px;margin:0 auto;line-height:1.6}
+
+/* Match highlight */
+mark{background:rgba(0,220,130,.25);color:var(--green-200);padding:0 2px;border-radius:2px}
+.c-result .distance{color:var(--text-muted);font-size:.8rem}
+
+/* Responsive */
+@media(max-width:600px){
+  .c-hero h1{font-size:1.8rem}
+  .c-result{flex-direction:column;align-items:stretch;text-align:center}
+  .c-result-meta{justify-content:center}
+  .c-panel{padding:24px 20px}
+  .c-detail-row{flex-direction:column;gap:2px;text-align:center}
+}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">⚡ EV <span>Charger Installer</span> Near Me</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="mobileNav">
+      <a href="/states/">States</a>
+      <a href="/tools/zip-search">ZIP Search</a>
+      <a href="/blog/">Blog</a>
+      <a href="/featured">Get Featured</a>
+    </nav>
+  </div>
+</header>
+
+<section class="c-hero">
+  <h1>Claim Your Business Listing</h1>
+  <p class="sub">Find your business, verify you're the owner, and upgrade to a Featured Installer — unlocked website link, photos, priority placement, and lead alerts.</p>
+</section>
+
+<div class="c-search">
+  <div class="c-search-box">
+    <span class="c-search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Search your business name, city, or state..." autocomplete="off" autocapitalize="words">
+  </div>
+  <div class="c-search-hint">4,468 verified EV charger installers listed nationwide</div>
+</div>
+
+<div class="c-loading" id="loading">
+  <div class="spinner"></div>
+  <p style="margin-top:12px">Loading installer directory...</p>
+</div>
+
+<div class="c-results" id="results"></div>
+
+<div class="c-empty" id="empty">
+  <div class="big">🔎</div>
+  <p>No installers found matching "<span id="emptyQuery"></span>".<br>Try a broader search — just the business name or city.</p>
+</div>
+
+<div class="c-overlay" id="overlay"></div>
+<div class="c-panel" id="panel">
+  <button class="c-panel-close" id="panelClose">✕</button>
+  <h2 id="panelName">Claim Your Listing</h2>
+  <p class="sub" id="panelMeta">Verify your ownership and upgrade to Featured.</p>
+
+  <div class="c-detail" id="panelDetail"></div>
+  <div class="c-price">
+    <div class="amount">$47</div>
+    <div class="sub">One-time • 30-day money-back guarantee • No subscription</div>
+  </div>
+
+  <form class="c-form" id="claimForm">
+    <label for="claimName">Your name</label>
+    <input type="text" id="claimName" placeholder="John Smith" required>
+
+    <label for="claimEmail">Your email</label>
+    <input type="email" id="claimEmail" placeholder="you@yourbusiness.com" required>
+
+    <label for="claimPhone">Your phone</label>
+    <input type="tel" id="claimPhone" placeholder="(555) 123-4567">
+
+    <label for="claimNotes">Tell us about your business (optional)</label>
+    <textarea id="claimNotes" placeholder="Describe your services, certifications, brands you install..."></textarea>
+
+    <button type="submit" class="c-btn-stripe" id="stripeBtn">
+      Upgrade to Featured — $47 →
+    </button>
+    <div class="c-note">🔒 Secure checkout via Stripe • Instant activation</div>
+  </form>
+</div>
+
+<section class="footer-note">
+  <strong>Already featured?</strong> Your listing should already appear at the top of your city page. If something looks wrong, email us at hello@ampinstall.com.
+  <br><br>
+  <strong>Not listed?</strong> We scrape data from public sources. If you're a licensed EV charger installer and don't see yourself,<br><a href="mailto:hello@ampinstall.com?subject=Add%20my%20listing" style="color:var(--green-400)">email us to get added</a>.
+</section>
+
+<script>
+// ─── Data ───
+let installers = [];
+
+// ─── DOM refs ───
+const searchInput = document.getElementById('searchInput');
+const resultsEl = document.getElementById('results');
+const emptyEl = document.getElementById('empty');
+const emptyQuery = document.getElementById('emptyQuery');
+const loadingEl = document.getElementById('loading');
+const overlay = document.getElementById('overlay');
+const panel = document.getElementById('panel');
+const panelClose = document.getElementById('panelClose');
+const panelName = document.getElementById('panelName');
+const panelMeta = document.getElementById('panelMeta');
+const panelDetail = document.getElementById('panelDetail');
+const claimForm = document.getElementById('claimForm');
+const claimName = document.getElementById('claimName');
+const claimEmail = document.getElementById('claimEmail');
+const claimPhone = document.getElementById('claimPhone');
+const claimNotes = document.getElementById('claimNotes');
+const stripeBtn = document.getElementById('stripeBtn');
+
+const STRIPE_URL = 'https://buy.stripe.com/9B614n113etx9JT01H0Ba00';
+
+// ─── Load data ───
+(async function load() {
+  loadingEl.style.display = 'block';
+  try {
+    const resp = await fetch('/data/installers_index.json');
+    installers = await resp.json();
+  } catch(e) {
+    // Fallback: try relative path
+    try {
+      const resp = await fetch('data/installers_index.json');
+      installers = await resp.json();
+    } catch(e2) {
+      console.error('Failed to load installer data', e2);
+    }
+  }
+  loadingEl.style.display = 'none';
+  searchInput.disabled = false;
+  searchInput.focus();
+})();
+
+// ─── Fuzzy match ───
+function score(query, name, city) {
+  const q = query.toLowerCase().trim();
+  const n = name.toLowerCase();
+  const c = city.toLowerCase();
+  let s = 0;
+
+  // Exact prefix match (highest)
+  if (n.startsWith(q)) s += 100;
+  if (c.startsWith(q)) s += 80;
+
+  // Word boundary match ("Miami" matches "Miami Electric")
+  const words = n.split(/[\s,.-]+/);
+  for (const w of words) {
+    if (w.startsWith(q) && w.length > 2) s += 50;
+  }
+  const cityWords = c.split(/[\s,.-]+/);
+  for (const w of cityWords) {
+    if (w.startsWith(q) && w.length > 2) s += 40;
+  }
+
+  // Contains substring
+  if (n.includes(q)) s += 20;
+  if (c.includes(q)) s += 15;
+
+  // Very short query penalty
+  if (q.length < 3) s *= 0.5;
+
+  return s;
+}
+
+function highlight(text, query) {
+  if (!query || query.length < 2) return text;
+  const q = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = new RegExp(`(${q})`, 'gi');
+  return text.replace(re, '<mark>$1</mark>');
+}
+
+function search(query) {
+  if (!query || query.length < 2) return [];
+
+  const scored = installers.map(d => ({
+    ...d,
+    score: score(query, d.n, d.c)
+  }));
+
+  const filtered = scored.filter(d => d.score > 0);
+  filtered.sort((a, b) => b.score - a.score);
+  return filtered.slice(0, 20);
+}
+
+function renderResults(query, results) {
+  resultsEl.innerHTML = '';
+
+  if (results.length === 0) {
+    emptyEl.style.display = 'block';
+    emptyQuery.textContent = query;
+    return;
+  }
+  emptyEl.style.display = 'none';
+
+  for (const d of results) {
+    const div = document.createElement('div');
+    div.className = 'c-result';
+
+    const ratingBadge = d.r > 0 ? `<span class="c-result-rating">★ ${d.r}</span>` : '';
+
+    div.innerHTML = `
+      <div class="c-result-info">
+        <div class="c-result-name">${highlight(d.n, query)}</div>
+        <div class="c-result-meta">
+          <span>📍 ${highlight(d.c, query)}</span>
+          ${ratingBadge}
+          <span>📞 ${d.p || '—'}</span>
+        </div>
+      </div>
+      <div class="c-result-action">
+        <button class="c-result-btn" data-name="${d.n.replace(/"/g,'&quot;')}" data-city="${d.c.replace(/"/g,'&quot;')}" data-phone="${d.p}" data-rating="${d.r}" data-website="${d.w || ''}">Claim →</button>
+      </div>
+    `;
+
+    div.querySelector('button').addEventListener('click', (e) => {
+      e.stopPropagation();
+      openPanel(d);
+    });
+
+    resultsEl.appendChild(div);
+  }
+}
+
+// ─── Panel ───
+function openPanel(d) {
+  panelName.textContent = d.n;
+  panelMeta.textContent = `${d.c} • Upgrade to Featured for $47 one-time`;
+
+  let websiteHtml = d.w ? `<a href="${d.w}" target="_blank" style="color:var(--green-400)">${d.w}</a>` : '<span class="text-muted">Not added yet — unlocked with upgrade</span>';
+
+  panelDetail.innerHTML = `
+    <div class="c-detail-row"><span class="c-detail-label">Business</span><span class="c-detail-value">${d.n}</span></div>
+    <div class="c-detail-row"><span class="c-detail-label">Location</span><span class="c-detail-value">${d.c}</span></div>
+    ${d.p ? `<div class="c-detail-row"><span class="c-detail-label">Phone</span><span class="c-detail-value">${d.p}</span></div>` : ''}
+    ${d.r > 0 ? `<div class="c-detail-row"><span class="c-detail-label">Rating</span><span class="c-detail-value c-result-rating">★ ${d.r}</span></div>` : ''}
+    <div class="c-detail-row"><span class="c-detail-label">Website</span><span class="c-detail-value">${websiteHtml}</span></div>
+    <div class="c-detail-row"><span class="c-detail-label">Status</span><span class="c-detail-value" style="color:var(--green-400)">Free Listing • Ready to Upgrade</span></div>
+  `;
+
+  // Store installer data for form submission
+  claimForm.dataset.installerName = d.n;
+  claimForm.dataset.installerCity = d.c;
+  claimForm.dataset.installerPhone = d.p;
+
+  overlay.classList.add('open');
+  panel.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePanel() {
+  overlay.classList.remove('open');
+  panel.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+overlay.addEventListener('click', closePanel);
+panelClose.addEventListener('click', closePanel);
+
+// ─── Form submission ───
+claimForm.addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const name = claimName.value.trim();
+  const email = claimEmail.value.trim();
+  const phone = claimPhone.value.trim();
+  const notes = claimNotes.value.trim();
+  const installerName = this.dataset.installerName || '';
+  const installerCity = this.dataset.installerCity || '';
+  const installerPhone = this.dataset.installerPhone || '';
+
+  if (!name || !email) {
+    alert('Please enter your name and email.');
+    return;
+  }
+
+  stripeBtn.disabled = true;
+  stripeBtn.textContent = 'Processing...';
+
+  try {
+    // Send claim lead to our API
+    const leadPayload = {
+      name: name,
+      email: email,
+      phone: phone,
+      notes: notes,
+      business: installerName,
+      city: installerCity,
+      business_phone: installerPhone,
+      source: 'claim_page',
+      page: '/claim.html'
+    };
+
+    // Fire and forget the lead capture
+    fetch('https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(leadPayload)
+    }).catch(() => {});
+
+    // Open Stripe checkout in new tab
+    window.open(STRIPE_URL, '_blank');
+
+    // Show success state
+    stripeBtn.textContent = '✓ Redirected to Stripe';
+    stripeBtn.style.background = 'var(--green-500)';
+    stripeBtn.disabled = false;
+
+    setTimeout(() => {
+      closePanel();
+      // Reset form
+      claimForm.reset();
+      stripeBtn.textContent = 'Upgrade to Featured — $47 →';
+      stripeBtn.style.background = '';
+    }, 3000);
+
+  } catch(e) {
+    stripeBtn.textContent = 'Error — try again';
+    stripeBtn.disabled = false;
+    setTimeout(() => {
+      stripeBtn.textContent = 'Upgrade to Featured — $47 →';
+    }, 3000);
+  }
+});
+
+// ─── Search input ───
+let searchTimer;
+searchInput.addEventListener('input', function() {
+  clearTimeout(searchTimer);
+  const query = this.value;
+
+  if (query.length < 2) {
+    resultsEl.innerHTML = '';
+    emptyEl.style.display = 'none';
+    return;
+  }
+
+  searchTimer = setTimeout(() => {
+    const results = search(query);
+    renderResults(query, results);
+  }, 150);
+});
+
+// Handle keyboard escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closePanel();
+});
+</script>
+<script src="/js/analytics.js" defer></script></body>
+</html>

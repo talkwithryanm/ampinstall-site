@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="sgvermont" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="58" fill="url(#sgvermont)" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.3"/>
+  <polygon points="98.7,81.7 65.7,97.0 37.2,81.4 28.4,45.8 62.3,31.0 90.8,46.6" fill="#22c55e" fill-opacity="0.15" stroke="#22c55e" stroke-width="0.8" stroke-opacity="0.4"/>
+  <polygon points="80.6,85.3 42.7,80.6 47.4,42.7 85.3,47.4" fill="none" stroke="#22c55e" stroke-width="0.5" stroke-opacity="0.25"/>
+  <text x="64" y="72" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="32" font-weight="800" fill="#22c55e">VT</text>
+</svg>

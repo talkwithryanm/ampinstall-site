@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="sgnew-hampshire" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="58" fill="url(#sgnew-hampshire)" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.3"/>
+  <polygon points="106.8,67.7 77.9,93.9 46.8,88.6 34.1,61.4 49.6,33.2 83.5,36.1" fill="#22c55e" fill-opacity="0.15" stroke="#22c55e" stroke-width="0.8" stroke-opacity="0.4"/>
+  <polygon points="83.0,64.0 64.0,83.0 45.0,64.0 64.0,45.0" fill="none" stroke="#22c55e" stroke-width="0.5" stroke-opacity="0.25"/>
+  <text x="64" y="72" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="32" font-weight="800" fill="#22c55e">NH</text>
+</svg>

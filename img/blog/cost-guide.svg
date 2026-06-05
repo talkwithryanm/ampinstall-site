@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="400" height="240">
+  <defs>
+    <linearGradient id="bgBlogcost-guide" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#131926"/>
+      <stop offset="100%" stop-color="#0d1220"/>
+    </linearGradient>
+    <linearGradient id="glowBlogcost-guide" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.04"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="120" fill="url(#bgBlogcost-guide)" rx="12"/>
+  <rect width="200" height="120" fill="url(#glowBlogcost-guide)" rx="12"/>
+  <circle cx="40" cy="20" r="80" fill="#22c55e" opacity="0.03"/>
+  <circle cx="170" cy="100" r="70" fill="#3b82f6" opacity="0.03"/>
+  <polyline points="20,50 40,80 60,60 80,90 100,70" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="20" cy="50" r="3" fill="#22c55e"/><circle cx="40" cy="80" r="3" fill="#22c55e"/><circle cx="60" cy="60" r="3" fill="#22c55e"/><circle cx="80" cy="90" r="3" fill="#22c55e"/><circle cx="100" cy="70" r="3" fill="#22c55e"/>
+  <text x="160" y="105" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="28">💰</text>
+</svg>

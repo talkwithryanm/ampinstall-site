@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="sgillinois" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="58" fill="url(#sgillinois)" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.3"/>
+  <polygon points="94.4,69.9 74.4,94.3 36.4,95.7 25.7,56.6 53.9,34.7 90.2,33.8" fill="#22c55e" fill-opacity="0.15" stroke="#22c55e" stroke-width="0.8" stroke-opacity="0.4"/>
+  <polygon points="82.0,70.2 57.8,82.0 46.0,57.8 70.2,46.0" fill="none" stroke="#22c55e" stroke-width="0.5" stroke-opacity="0.25"/>
+  <text x="64" y="72" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="32" font-weight="800" fill="#22c55e">IL</text>
+</svg>

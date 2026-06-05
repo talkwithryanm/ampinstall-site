@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="400" height="240">
+  <defs>
+    <linearGradient id="bgBloglevel-2-vs-3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#131926"/>
+      <stop offset="100%" stop-color="#0d1220"/>
+    </linearGradient>
+    <linearGradient id="glowBloglevel-2-vs-3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.04"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="120" fill="url(#bgBloglevel-2-vs-3)" rx="12"/>
+  <rect width="200" height="120" fill="url(#glowBloglevel-2-vs-3)" rx="12"/>
+  <circle cx="40" cy="20" r="80" fill="#22c55e" opacity="0.03"/>
+  <circle cx="170" cy="100" r="70" fill="#3b82f6" opacity="0.03"/>
+  <rect x="12" y="70" width="16" height="30" rx="3" fill="#60a5fa" fill-opacity="0.4"/>
+  <rect x="22" y="50" width="16" height="50" rx="3" fill="#60a5fa" fill-opacity="0.7"/>
+  <rect x="32" y="70" width="16" height="30" rx="3" fill="#60a5fa"/><rect x="52" y="70" width="16" height="30" rx="3" fill="#22c55e" fill-opacity="0.4"/>
+  <rect x="62" y="30" width="16" height="70" rx="3" fill="#22c55e" fill-opacity="0.7"/>
+  <rect x="72" y="70" width="16" height="30" rx="3" fill="#22c55e"/>
+  <text x="160" y="105" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="28">⚡</text>
+</svg>

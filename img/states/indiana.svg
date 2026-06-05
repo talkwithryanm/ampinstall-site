@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="sgindiana" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="58" fill="url(#sgindiana)" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.3"/>
+  <polygon points="101.9,66.7 80.2,97.3 45.0,92.2 34.1,61.9 50.0,35.2 80.8,39.1" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.4"/>
+  <polygon points="81.6,75.4 52.6,81.6 46.4,52.6 75.4,46.4" fill="none" stroke="#3b82f6" stroke-width="0.5" stroke-opacity="0.25"/>
+  <text x="64" y="72" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="32" font-weight="800" fill="#3b82f6">IN</text>
+</svg>

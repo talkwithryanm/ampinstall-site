@@ -1,0 +1,38 @@
+<!-- AmpInstall ZIP Search Widget — Embeddable -->
+<style>
+.amp-zip-widget{background:#0a0f1e;color:#fff;padding:24px;border-radius:12px;font-family:-apple-system,sans-serif;max-width:400px}
+.amp-zip-widget h3{margin:0 0 8px;font-size:18px;color:#00dc82}
+.amp-zip-widget p{margin:0 0 16px;font-size:13px;color:#999}
+.amp-zip-widget .row{display:flex;gap:8px}
+.amp-zip-widget input{flex:1;padding:10px 14px;border:1px solid #333;border-radius:8px;background:#1a1a2e;color:#fff;font-size:15px}
+.amp-zip-widget input:focus{outline:2px solid #00dc82;border-color:#00dc82}
+.amp-zip-widget button{padding:10px 20px;background:#00dc82;color:#0a0f1e;border:none;border-radius:8px;font-weight:700;cursor:pointer;white-space:nowrap}
+.amp-zip-widget button:hover{opacity:0.9}
+.amp-zip-widget .footer{font-size:11px;color:#555;margin-top:12px;text-align:center}
+.amp-zip-widget .footer a{color:#00dc82;text-decoration:none}
+</style>
+<div class="amp-zip-widget">
+  <h3>⚡ Find EV Charger Installers</h3>
+  <p>Enter your ZIP code for local installer quotes</p>
+  <div class="row">
+    <input type="text" class="amp-zip-input" placeholder="ZIP Code" maxlength="5" inputmode="numeric" pattern="[0-9]*">
+    <button class="amp-zip-btn">Search</button>
+  </div>
+  <div class="footer">Powered by <a href="https://ampinstall.com">AmpInstall</a></div>
+</div>
+<script>
+(function(){
+  var btn = document.querySelector('.amp-zip-btn');
+  var inp = document.querySelector('.amp-zip-input');
+  if(btn && inp){
+    btn.addEventListener('click', function(){
+      var z = inp.value.trim();
+      if(/^\d{5}$/.test(z)) window.open('https://ampinstall.com/tools/zip-search?zip='+z, '_blank');
+      else alert('Please enter a valid 5-digit ZIP code');
+    });
+    inp.addEventListener('keydown', function(e){
+      if(e.key === 'Enter') btn.click();
+    });
+  }
+})();
+</script>

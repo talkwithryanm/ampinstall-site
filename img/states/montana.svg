@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="sgmontana" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="58" fill="url(#sgmontana)" stroke="#f59e0b" stroke-width="1.5" stroke-opacity="0.3"/>
+  <polygon points="103.0,64.7 81.0,94.6 45.5,94.9 22.0,63.3 46.1,31.6 84.6,29.7" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="0.8" stroke-opacity="0.4"/>
+  <polygon points="79.2,87.5 40.5,79.2 48.8,40.5 87.5,48.8" fill="none" stroke="#f59e0b" stroke-width="0.5" stroke-opacity="0.25"/>
+  <text x="64" y="72" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="32" font-weight="800" fill="#f59e0b">MT</text>
+</svg>

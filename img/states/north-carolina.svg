@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="sgnorth-carolina" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="58" fill="url(#sgnorth-carolina)" stroke="#ef4444" stroke-width="1.5" stroke-opacity="0.3"/>
+  <polygon points="100.9,76.7 71.4,102.3 40.6,84.3 35.6,54.2 57.5,30.6 94.2,37.8" fill="#ef4444" fill-opacity="0.15" stroke="#ef4444" stroke-width="0.8" stroke-opacity="0.4"/>
+  <polygon points="86.0,64.0 64.0,86.0 42.0,64.0 64.0,42.0" fill="none" stroke="#ef4444" stroke-width="0.5" stroke-opacity="0.25"/>
+  <text x="64" y="72" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="32" font-weight="800" fill="#ef4444">NC</text>
+</svg>

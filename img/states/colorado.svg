@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="sgcolorado" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <circle cx="64" cy="64" r="58" fill="url(#sgcolorado)" stroke="#8b5cf6" stroke-width="1.5" stroke-opacity="0.3"/>
+  <polygon points="93.6,73.1 72.1,99.1 42.1,84.5 23.8,51.7 56.1,29.9 93.3,36.7" fill="#8b5cf6" fill-opacity="0.15" stroke="#8b5cf6" stroke-width="0.8" stroke-opacity="0.4"/>
+  <polygon points="83.2,72.5 55.5,83.2 44.8,55.5 72.5,44.8" fill="none" stroke="#8b5cf6" stroke-width="0.5" stroke-opacity="0.25"/>
+  <text x="64" y="72" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="32" font-weight="800" fill="#8b5cf6">CO</text>
+</svg>

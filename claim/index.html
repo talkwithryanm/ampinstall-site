@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="en"><head><link rel="icon" href="/favicon.png" type="image/png"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/favicon.png"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Claim Your EV Charger Installer Listing</title>
+<meta name="description" content="Claim and update your EV charger installation business listing on ampinstall.com. Free profile with photos, hours, and service areas.">
+<link rel="canonical" href="https://ampinstall.com/claim/">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+.cl-hero{text-align:center;padding:80px 0 40px}.cl-hero h1{font-size:2.5rem;font-weight:200;color:#fff;margin-bottom:12px}.cl-hero p{color:var(--text-secondary);max-width:500px;margin:0 auto}
+.cl-search{max-width:520px;margin:24px auto;display:flex;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--border-card);background:var(--bg-card)}
+.cl-search input{flex:1;padding:16px 20px;font-size:1rem;background:transparent;border:none;outline:none;color:#fff;font-family:inherit}
+.cl-search input::placeholder{color:var(--text-muted)}.cl-search button{padding:16px 24px;background:var(--gradient-cta);color:#fff;font-weight:600;border:none;cursor:pointer}
+#cl-results{margin-top:24px;display:grid;gap:10px;max-width:600px;margin-left:auto;margin-right:auto}
+.cl-card{display:flex;align-items:center;gap:16px;padding:14px 18px;background:var(--gradient-card);border:1px solid var(--border-card);border-radius:12px;text-decoration:none;color:var(--text-primary)}
+.cl-card:hover{border-color:var(--green-400)}.cl-card .nm{font-weight:600}.cl-card .loc{font-size:0.85rem;color:var(--text-secondary)}
+.cl-badge{font-size:0.75rem;padding:3px 8px;border-radius:4px;background:rgba(0,220,130,0.1);color:var(--green-400);margin-left:auto;white-space:nowrap}
+.cl-none{text-align:center;color:var(--text-muted);padding:40px;display:none}
+</style></head><body>
+<header class="header"><div class="header-inner"><a href="/" class="logo">⚡ EV <span>Charger Installer</span> Near Me</a><button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button><nav class="nav"><a href="/states/">States</a><a href="/tools/zip-search">ZIP Search</a><a href="/blog/">Blog</a></nav></div></header>
+
+<section class="cl-hero"><div class="container">
+<h1>Claim Your Listing</h1>
+<p>Search for your business to claim your ampinstall.com profile — add photos, hours, and your website.</p>
+<div class="cl-search"><input type="text" id="cl-input" placeholder="Search your business name..." autofocus oninput="searchClaim(this.value)"><button onclick="searchClaim(document.getElementById('cl-input').value)">Search</button></div>
+<div id="cl-results"></div>
+<div class="cl-none" id="cl-none">No results found. Try a different search or <a href="/contact.html">contact us</a>.</div>
+</div></section>
+
+<section class="section section-gray"><div class="container">
+<h2 class="section-title">Why Claim Your Listing?</h2>
+<div class="features-grid">
+<div class="feature-card"><h3>Edit Your Profile</h3><p>Update your business name, address, phone, and service areas anytime.</p></div>
+<div class="feature-card"><h3>Verified Badge</h3><p>A verified badge builds trust with homeowners searching for installers near them.</p></div>
+<div class="feature-card"><h3>Rank Higher</h3><p>Complete profiles with photos rank better in search results and get more views.</p></div>
+<div class="feature-card"><h3>Lead Alerts</h3><p>Get notified when homeowners request quotes in your service area.</p></div>
+</div>
+</div></section>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div><h4>⚡ EV Charger Installer Near Me</h4></div><div><h4>Links</h4><a href="/">Home</a><a href="/states/">Browse States</a><a href="/blog/">Blog</a></div></div><div class="footer-bottom">&copy; 2025-2026 EV Charger Installer Near Me</div></div></footer>
+<script src="/js/main.js"></script>
+<script>
+const CI = '/data/claim_index.json';
+let claimData = null;
+fetch(CI).then(r=>r.json()).then(d=>{claimData=d;});
+function searchClaim(v){
+ v=v.toLowerCase().trim();
+ const r=document.getElementById('cl-results');
+ const n=document.getElementById('cl-none');
+ r.innerHTML='';
+ if(!v||v.length<2||!claimData){n.style.display='none';return;}
+ const hits=Object.entries(claimData).filter(([k,val])=>val.n.toLowerCase().includes(v)||k.includes(v)).slice(0,20);
+ if(hits.length===0){n.style.display='block';return;}
+ n.style.display='none';
+ hits.forEach(([slug,val])=>{
+  const a=document.createElement('a');
+  a.href='/claim/'+slug+'.html';
+  a.className='cl-card';
+  a.innerHTML='<div><div class="nm">'+val.n+'</div><div class="loc">'+val.c+', '+val.s+'</div></div><span class="cl-badge">Claim →</span>';
+  r.appendChild(a);
+ });
+}
+</script>
+<script src="/js/analytics.js" defer></script></body></html>
